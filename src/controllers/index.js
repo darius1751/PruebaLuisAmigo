@@ -14,11 +14,11 @@ const app = new Vue({
                 const {title,original_title,producer,director} = data;
                 return {title,original_title,producer,director};
             });
-            this.$data.items = this.ordenarA_Z;
+            this.$data.items = this.ordenarA_Z();
         }
         getData();
       },
-        computed:{
+        methods:{
             ordenarZ_A:function(){
                 let datos= this.$data.items;
                 for(let i = 0; i < datos.length-1;i++){

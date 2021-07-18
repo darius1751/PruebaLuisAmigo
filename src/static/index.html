@@ -8,11 +8,11 @@
     <template>
         <h2 style='float:left'>Animes Api (ghibliapi.herokuapp.com)</h2>
         <div id='buttons'>
-            <button class='btn btn-primary' @click='items=ordenarA_Z;ordenAZ=true' :disabled='ordenAZ'>Ordenar de A-Z</button>
-            <button class='btn btn-primary' @click='items=ordenarZ_A;ordenAZ=false' :disabled='!ordenAZ'>Ordenar de Z-A</button>
+            <button class='btn btn-primary' @click='app.items=ordenarA_Z();ordenAZ=true' :disabled='ordenAZ'>Ordenar de A-Z</button>
+            <button class='btn btn-primary' @click='app.items=ordenarZ_A();ordenAZ=false' :disabled='!ordenAZ'>Ordenar de Z-A</button>
         </div>
         <div>
-            <b-table striped hover :items="ordenAZ?ordenarA_Z:ordenarZ_A"></b-table>
+            <b-table striped hover v-bind:items="items"></b-table>
             <div class="loadingio-spinner-bean-eater-als05gifhqe" v-show='items<=0'><div class="ldio-rsxfpe30hs">
                 <div><div></div><div></div><div></div></div><div><div></div><div></div><div></div></div>
                 </div></div>
